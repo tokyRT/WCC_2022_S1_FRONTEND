@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,CAAC,AAAA,CACG,UAAU,CAAE,UAAU,CACzB",
+    "sources": [
+        "../scss/style.scss",
+        "../scss/partials/_variables.scss",
+        "../scss/partials/_nav.scss",
+        "../scss/partials/_hero.scss"
+    ],
+    "names": [],
+    "file": "style.min.css"
+}
