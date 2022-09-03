@@ -1,6 +1,13 @@
 *{
     box-sizing: border-box;
+    font-family: 'Clarika Geometric', sans-serif;
+    margin: 0;
 }
+
+body {
+    overflow-x:hidden 
+  }
 @import './partials/variables';
 @import './partials/nav';
 @import './partials/hero';
+
