@@ -1,61 +1,120 @@
-.header{
+.header {
     padding: 20px 5%;
     display: flex;
     justify-content: center;
+    position: relative;
     position: absolute;
     top: 0;
-    width: 100vw; 
+    width: 100vw;
     z-index: 100;
 }
 
-.flex{
+.flex {
     display: flex;
     align-items: center;
 }
 
-.header-content{
+.header-content {
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    max-width: 1920px;
-    
+    max-width: 1500px;
+    overflow: hidden;
 
-    ul{
-        display: flex;
-        list-style-type: none;
-        color: #fff;
-        li{
-            margin: 0 30px;  
-            font-weight: 600; 
-
-            & span{
-                margin-left: 5px;
+    .close-icon {
+        display: none;
+    }
+    nav{
+        transition: left .5s cubic-bezier(0.85, 0, 0.15, 1);
+        ul {
+            display: flex;
+            list-style-type: none;
+            color: #fff;
+            li {
+                margin: 0 25px;
+                font-weight: 600;
+                a {
+                    text-decoration: none;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    i {
+                        font-size: 0.8em;
+                        margin-top: 5px;
+                    }
+                }
+                & span {
+                    margin-left: 5px;
+                }
+                &.logo {
+                    display: none;
+                }
             }
         }
-
     }
 
-    .toggle-icon{
+    .toggle-icon {
         display: none;
     }
 
-    ul:last-child{
+    ul:last-child {
         margin-right: 80px;
-    } 
+    }
 
-    @media(max-width: 1250px){
-        ul{
-            display: none;
+    @media (max-width: 1250px) {
+        nav {
+            background-color: $orange;
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            left: 110%;
+            top: 0;
+            .close-icon {
+                display: block;
+                position: absolute;
+                right: 30px;
+                top: 30px;
+                cursor: pointer;
+            }
+            ul {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                color: $darkGrey;
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                width: 100%;
+                font-size: 2em;
+                position: relative;
+                li {
+                    a {
+                        color: white;
+                        i {
+                            font-size: 0.6em;
+                            margin-top: 10px;
+                        }
+                    }
+                    &:last-child {
+                        display: block;
+                        position: absolute;
+                        bottom: 30px;
+                    }
+                }
+            }
         }
-        .toggle-icon{
+        .toggle-icon {
             display: inline;
+            cursor: pointer;
         }
     }
 
-    @media(max-width: 576px){
-        .logo{
-            img{
+    @media (max-width: 576px) {
+        .logo {
+            img {
                 height: 40px;
                 width: auto;
             }

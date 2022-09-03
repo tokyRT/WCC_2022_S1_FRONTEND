@@ -1,0 +1,86 @@
+body > .overlay{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    z-index: 999999999;
+    pointer-events: none;
+    // display: none;
+    
+    &>div:not(.logo){
+        width: 20%;
+        background-color: $orange;
+        height: 100%;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 4em;
+        font-weight: bold;
+        // transform: translateY(-100%);
+        
+        @for $i from 1 through 7{
+            &:nth-child(#{$i}){
+                transition: transform .7s cubic-bezier(0.86,0,0.07,1) #{700 - ($i*70)}ms;
+            }
+        }
+    }
+    &.loaded{
+        &>div:not(.logo){
+            transform: translateY(-100%);
+            // transform: scaleY(0);
+        }
+        .logo{
+            display: none;
+        }
+    }
+    .logo{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        gap: 30px;
+        .circle{
+            margin-top: -10px;
+            animation: starSpinning 2s infinite;
+        }
+        .text{
+            animation: fadeIn .8s;
+            svg.text{
+                overflow: visible;
+                @for $i from 1 to 7 {
+                    path:nth-child(#{$i}){
+                        animation: letterSlide .6s infinite alternate;
+                        animation-delay: #{$i/10}s;
+                    }
+                }
+            }
+        }
+    }
+}
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    75%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes starSpinning {
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes letterSlide {
+    from{
+        transform: translateY(-20px);
+        opacity: .3;
+    }
+}
