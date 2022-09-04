@@ -34,7 +34,22 @@
             li {
                 margin: 0 25px;
                 font-weight: 600;
-
+                @media(min-width: 1250px){
+                    .active{
+                        color: $orange;
+                        font-weight: 700;
+                        position: relative;
+    
+                        &::after{
+                            content: "";
+                            background-color: $orange;
+                            position: absolute;
+                            bottom: -5px;
+                            width: 60%;
+                            height: 4px;
+                        }
+                    }
+                }
                 a {
                     text-decoration: none;
                     color: white;
@@ -43,43 +58,32 @@
                     gap: 10px;
                     position: relative;
 
-                    &::after{
-                        content: "";
-                        position: absolute;
-                        background-color: $orange;
-                        height: 4px;
-                        width: 0;
-                        bottom: -5px;
-                        transition: 0.3s;
-                    }
-                    &:not(.signup):hover::after{
-                        width: 60%;
-                    }
-
-                    &:not(.signup):hover{
-                        color: $orange;
-                    }
                     
+                    @media(min-width: 1250px){
+                        &::after{
+                            content: "";
+                            position: absolute;
+                            background-color: $orange;
+                            height: 4px;
+                            width: 0;
+                            bottom: -5px;
+                            transition: 0.3s;
+                        }
+                        &:not(.signup):hover::after{
+                            width: 60%;
+                        }
+    
+                        &:not(.signup):hover{
+                            color: $orange;
+                        }
+                    }
                     i {
                         font-size: 0.8em;
                         margin-top: 5px;
                     }
                 }
 
-                .active{
-                    color: $orange;
-                    font-weight: 700;
-                    position: relative;
-
-                    &::after{
-                        content: "";
-                        background-color: $orange;
-                        position: absolute;
-                        bottom: -5px;
-                        width: 60%;
-                        height: 4px;
-                    }
-                }
+                
 
 
                 & span {
@@ -99,6 +103,7 @@
         display: none;
     }
 
+    
     
 
     @media (max-width: 1250px) {
@@ -128,6 +133,8 @@
                 width: 100%;
                 font-size: 2em;
                 position: relative;
+
+                
                 li {
                     a {
                         color: white;
