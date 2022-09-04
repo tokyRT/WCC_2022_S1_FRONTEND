@@ -34,7 +34,22 @@
             li {
                 margin: 0 25px;
                 font-weight: 600;
-
+                @media(min-width: 1250px){
+                    .active{
+                        color: $orange;
+                        font-weight: 700;
+                        position: relative;
+    
+                        &::after{
+                            content: "";
+                            background-color: $orange;
+                            position: absolute;
+                            bottom: -5px;
+                            width: 60%;
+                            height: 4px;
+                        }
+                    }
+                }
                 a {
                     text-decoration: none;
                     color: white;
@@ -42,23 +57,9 @@
                     align-items: center;
                     gap: 10px;
                     position: relative;
+
+                    
                     @media(min-width: 1250px){
-
-                        .active{
-                            color: $orange;
-                            font-weight: 700;
-                            position: relative;
-        
-                            &::after{
-                                content: "";
-                                background-color: $orange;
-                                position: absolute;
-                                bottom: -5px;
-                                width: 60%;
-                                height: 4px;
-                            }
-                        }
-
                         &::after{
                             content: "";
                             position: absolute;
@@ -132,6 +133,8 @@
                 width: 100%;
                 font-size: 2em;
                 position: relative;
+
+                
                 li {
                     a {
                         color: white;
