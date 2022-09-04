@@ -70,35 +70,64 @@
         .btn-container {
             display: flex;
             margin-bottom: 45px;
-            .btn-filled {
-                background-color: $orange;
-                cursor: pointer;
+            a{
+                overflow: hidden;
+                position: relative;
                 padding: 16px 30px;
                 border-radius: 30px;
-                color: #fff;
                 font-weight: 800;
-                margin-right: 35px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-            }
-
-            .btn-outline {
-                padding: 16px 30px;
-                cursor: pointer;
-                border-radius: 25px;
-                color: $orange;
-                font-weight: 800;
-                border: 1px solid $orange;
-                border-radius: 30px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                i {
-                    // font-size: .7em;
-                    margin-left: 10px;
-                    margin-top: 4px;
+                text-decoration: none;
+                &.btn-filled {
+                    background-color: $orange;
+                    color: #fff;
+                    margin-right: 35px;
+                    span.circle{
+                        background: #00000025;
+                    }
+                }
+    
+                &.btn-outline {
+                    color: $orange;
+                    border: 1px solid $orange;
+                    span.circle{
+                        background: #e2770425;
+                    }
+                    i {
+                        // font-size: .7em;
+                        margin-left: 10px;
+                        margin-top: 4px;
+                    }
+                }
+                span.text{
+                    z-index: 2;
+                    i{
+                        transition: all .15s;
+                    }
+                }
+                span.circle{
+                    display: block;
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                    bottom: -30px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-radius: 50%;
+                    z-index: 1;
+                    transition: all .25s ease-out;
+                }
+                &:hover{
+                    span.circle{
+                        transform: scale(10);
+                    }
+                    .text {
+                        i{
+                            transform: translateX(10px);
+                        }
+                    }
                 }
             }
         }
