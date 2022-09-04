@@ -42,44 +42,47 @@
                     align-items: center;
                     gap: 10px;
                     position: relative;
+                    @media(min-width: 1250px){
 
-                    &::after{
-                        content: "";
-                        position: absolute;
-                        background-color: $orange;
-                        height: 4px;
-                        width: 0;
-                        bottom: -5px;
-                        transition: 0.3s;
-                    }
-                    &:not(.signup):hover::after{
-                        width: 60%;
-                    }
+                        .active{
+                            color: $orange;
+                            font-weight: 700;
+                            position: relative;
+        
+                            &::after{
+                                content: "";
+                                background-color: $orange;
+                                position: absolute;
+                                bottom: -5px;
+                                width: 60%;
+                                height: 4px;
+                            }
+                        }
 
-                    &:not(.signup):hover{
-                        color: $orange;
+                        &::after{
+                            content: "";
+                            position: absolute;
+                            background-color: $orange;
+                            height: 4px;
+                            width: 0;
+                            bottom: -5px;
+                            transition: 0.3s;
+                        }
+                        &:not(.signup):hover::after{
+                            width: 60%;
+                        }
+    
+                        &:not(.signup):hover{
+                            color: $orange;
+                        }
                     }
-                    
                     i {
                         font-size: 0.8em;
                         margin-top: 5px;
                     }
                 }
 
-                .active{
-                    color: $orange;
-                    font-weight: 700;
-                    position: relative;
-
-                    &::after{
-                        content: "";
-                        background-color: $orange;
-                        position: absolute;
-                        bottom: -5px;
-                        width: 60%;
-                        height: 4px;
-                    }
-                }
+                
 
 
                 & span {
@@ -99,6 +102,7 @@
         display: none;
     }
 
+    
     
 
     @media (max-width: 1250px) {
