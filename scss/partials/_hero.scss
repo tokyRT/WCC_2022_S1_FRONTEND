@@ -12,7 +12,6 @@
         display: flex;
         justify-content: space-between;
     }
-
     .left {
         display: flex;
         flex-direction: column;
@@ -122,6 +121,9 @@
                 &:hover{
                     span.circle{
                         transform: scale(10);
+                        @media screen and (max-width: 680px) {
+                            transform: scale(15);
+                        }
                     }
                     .text {
                         i{
@@ -208,12 +210,22 @@
 
             top: 0;
             right: 100px;
-
+            .rectangle{
+                transition: .1s linear;
+                // animation: floating 2s infinite alternate;
+            }
+            @keyframes floating {
+                to{
+                    transform: rotate(200deg) translate(30px, 30px);
+                }
+            }
             .rectangle1 {
                 position: absolute;
                 left: 40px;
                 bottom: 160px;
-                transform: scale(1.5) rotate(-20deg);
+                img{
+                    transform: scale(1.5) rotate(-20deg);
+                }
             }
             .rectangle2 {
                 position: absolute;
@@ -224,13 +236,16 @@
                 position: absolute;
                 right: 40px;
                 bottom: 340px;
-                transform: rotate(90deg);
+                img{
+                    transform: rotate(90deg);
+                }
             }
 
             .girl {
                 position: absolute;
                 bottom: -4px;
                 right: 0;
+                overflow: hidden;
             }
 
             .mentor-background {
@@ -271,7 +286,7 @@
 
                     li{
                         cursor: pointer;
-                        transition: 0.3s;
+                        transition: 0.2s;
                     }
                     li:not(:last-child):hover{
                         margin-right: 15px;

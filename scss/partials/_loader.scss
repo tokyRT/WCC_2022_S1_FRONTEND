@@ -5,7 +5,7 @@ body > .overlay{
     display: flex;
     z-index: 999999999;
     pointer-events: none;
-    display: none;
+    // display: none;
     
     &>div:not(.logo){
         width: 20%;

@@ -25,7 +25,7 @@
         display: none;
     }
     nav{
-        transition: left .5s cubic-bezier(0.85, 0, 0.15, 1);
+        transition: all .5s cubic-bezier(0.85, 0, 0.15, 1);
         ul {
             display: flex;
             list-style-type: none;
@@ -112,7 +112,7 @@
             width: 100vw;
             height: 100vh;
             position: absolute;
-            left: 110%;
+            left: -100%;
             top: 0;
             .close-icon {
                 display: block;
@@ -136,6 +136,7 @@
 
                 
                 li {
+                    overflow: hidden;
                     a {
                         color: white;
                         i {
@@ -147,6 +148,30 @@
                         display: block;
                         position: absolute;
                         bottom: 30px;
+                    }
+                }
+                li:not(.logo){
+                    a{
+                        // transition-delay: .6s;
+                        transform: translateY(50px);
+                    }
+                    
+                    @for $i from 1 through 6 {
+                        a:nth-child(#{$i}){
+                            transition: all .4s;
+                            transition-delay: #{($i+4)/10}s;
+                        }
+                    }
+                    
+                }
+            }
+            &.show{
+                left: 0;
+                ul{
+                    li{
+                        a{
+                            transform: translateY(0);
+                        }
                     }
                 }
             }
