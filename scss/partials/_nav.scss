@@ -2,7 +2,6 @@
     padding: 20px 5%;
     display: flex;
     justify-content: center;
-    position: relative;
     position: absolute;
     top: 0;
     width: 100vw;
@@ -31,9 +30,11 @@
             display: flex;
             list-style-type: none;
             color: #fff;
+            margin-right: 90px;
             li {
                 margin: 0 25px;
                 font-weight: 600;
+
                 a {
                     text-decoration: none;
                     color: white;
@@ -52,6 +53,9 @@
                     display: none;
                 }
             }
+
+
+            
         }
     }
 
@@ -59,9 +63,7 @@
         display: none;
     }
 
-    ul:last-child {
-        margin-right: 80px;
-    }
+    
 
     @media (max-width: 1250px) {
         nav {
