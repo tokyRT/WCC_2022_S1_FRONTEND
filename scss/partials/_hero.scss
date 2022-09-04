@@ -122,7 +122,8 @@
                     span.circle{
                         transform: scale(10);
                         @media screen and (max-width: 680px) {
-                            transform: scale(15);
+                            transition-duration: .4s;
+                            transform: scale(21);
                         }
                     }
                     .text {
