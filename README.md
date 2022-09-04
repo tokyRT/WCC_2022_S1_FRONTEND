@@ -1,7 +1,7 @@
 # WCC_2022_S1_FRONTEND
 techzara_wcc2 
-## demo:
-[wcc-1-yasai.netlify.app](wcc-1-yasai.netlify.app)
+## demo
+[wcc-1-yasai.netlify.app](https://wcc-1-yasai.netlify.app)
 ## made using only
 - Html
 - Scss
