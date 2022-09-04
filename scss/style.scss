@@ -2,17 +2,20 @@
 @import './partials/variables';
 *{
     box-sizing: border-box;
-    font-family: 'Clarika Geometric', sans-serif;
     margin: 0;
 }
 
 body{
+  font-family: 'Clarika Geometric', sans-serif;
   background: #FBFAF8;
   font-size: 18px;
   overflow-x: hidden;
   padding-bottom: 50vh;
   @media(max-width: 680px){
     padding-bottom: 100vh;
+  }
+  p{
+    font-family: 'Trebuchet MS', 'Clarika Geometric', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
 }
 
